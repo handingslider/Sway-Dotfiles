@@ -1,0 +1,21 @@
+* { 
+    font-family: "Google Sans";
+}
+.thunar .view {
+    background-color: #2f343f;
+    background-image: none; 
+}
+.thunar .sidebar .view {
+    background-color: #2f343f; 
+}
+.thunar toolbar, 
+window.thunar headerbar,
+.thunar entry {
+    background-color: #2f343f;
+    background-image: none;
+}
+.thunar menubar,
+.thunar menubar > * {
+    background-color: #2f343f; /* Dark Gray - Use the color from the top bar screenshot */
+    background-image: none;
+}
