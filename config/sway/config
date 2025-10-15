@@ -3,7 +3,7 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-
+exec xrandr --output XWAYLAND0 --primary
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -123,12 +123,13 @@ set $workspace1 ""
 set $workspace2 ""
 set $workspace3 ""
 set $workspace4 ""
+set $workspace5 ""
     # Switch to workspace
     bindsym $mod+1 workspace $workspace1
     bindsym $mod+2 workspace $workspace2
     bindsym $mod+3 workspace $workspace3
     bindsym $mod+4 workspace $workspace4
-    bindsym $mod+5 workspace number 5
+    bindsym $mod+5 workspace $workspace5
     bindsym $mod+6 workspace number 6
     bindsym $mod+7 workspace number 7
     bindsym $mod+8 workspace number 8
@@ -139,7 +140,7 @@ set $workspace4 ""
     bindsym $mod+Shift+2 move container to workspace $workspace2
     bindsym $mod+Shift+3 move container to workspace $workspace3
     bindsym $mod+Shift+4 move container to workspace $workspace4
-    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+5 move container to workspace $workspace5
     bindsym $mod+Shift+6 move container to workspace number 6
     bindsym $mod+Shift+7 move container to workspace number 7
     bindsym $mod+Shift+8 move container to workspace number 8
@@ -249,22 +250,23 @@ include /etc/sway/config.d/*
 
 ### Display configuration
 
-### Mine Display
-
-###output VGA-1 {
-###        position 1366,0
-###        enable mode 1280x1024@75.025Hz
+### My Display
+###set $mmonitor VGA-1
+###set $smonitor LVDS-1
+###output $mmonitor {
+###        position 0,0
+###	enable mode 1280x1024@75.025Hz
 ###}
-###output LVDS-1 {
-###	disable
-###     power off
+###output $smonitor {
+###	enable mode 1366x768@60.013Hz
 ###	position 0,0
 ###}
+
 
 ### My keybinds
 bindsym $mod+shift+x exec swaylock
 bindsym $mod+shift+r exec swaymsg reload
-bindsym $mod+Print exec flameshot gui
+bindsym $mod+Print exec sway-screenshot -m region -o ~/Pictures/Screenshots
 
 ### Apps which will run at start of session
 exec {
@@ -285,3 +287,8 @@ assign {
 	[app_id="io.github.kukuruzka165.materialgram"] $workspace3
 	[app_id="thunar"] $workspace4
 }
+### Assign workspace to monitor
+###workspace $workspace1 output $mmonitor
+###workspace $workspace2 output $smonitor
+###workspace $workspace3 output $mmonitor
+###workspace $workspace4 output $smonitor
