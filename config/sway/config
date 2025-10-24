@@ -250,7 +250,7 @@ include /etc/sway/config.d/*
 
 ### Display configuration
 
-### My Display
+### Mine Display
 ###set $mmonitor VGA-1
 ###set $smonitor LVDS-1
 ###output $mmonitor {
@@ -260,6 +260,7 @@ include /etc/sway/config.d/*
 ###output $smonitor {
 ###	enable mode 1366x768@60.013Hz
 ###	position 0,0
+###	disable
 ###}
 
 
@@ -292,3 +293,9 @@ assign {
 ###workspace $workspace2 output $smonitor
 ###workspace $workspace3 output $mmonitor
 ###workspace $workspace4 output $smonitor
+
+for_window [class="mysummercar.exe"] floating enable
+# Configuration for COMPANY USB Device
+input 2522:63633:COMPANY_USB_Device {
+    accel_profile "flat"
+}
