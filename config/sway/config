@@ -237,11 +237,6 @@ assign {
 	[app_id="firefox"] $workspace2
 	[app_id="thunar"] $workspace4
 }
-### Assign workspace to monitor
-###workspace $workspace1 output $mmonitor
-###workspace $workspace2 output $smonitor
-###workspace $workspace3 output $mmonitor
-###workspace $workspace4 output $smonitor
 
 for_window {
 	[app_id="blueman-manager"] floating enable
