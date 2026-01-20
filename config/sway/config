@@ -224,7 +224,7 @@ exec {
 	$term
 	firefox
 	materialgram
-	sleep 10 && thunar
+	thunar
 }
 
 ### Execute notification service at start of sway
