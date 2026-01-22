@@ -13,7 +13,7 @@
         "custom/media"
     ],
     "modules-center": [
-        "sway/window"
+	"custom/cava"
     ],
     "modules-right": [
         "mpd",
@@ -37,21 +37,21 @@
          "all-outputs": true,
          "warp-on-scroll": false,
          "format": "{name} {icon}",
-	 "sort-by-number" : true,
+         "sort-by-number" : true,
          "format-icons": {
-	     "1": "", 
-	     "2": "", 
-	     "3": "", 
-	     "4": "", 
-	     "5": "",
+             "1": "", 
+             "2": "", 
+             "3": "", 
+             "4": "", 
+             "5": "",
          },
         "persistent-workspaces": {
-	    "1": [],
+            "1": [],
             "2": [],
             "3": [],
             "4": [],
             "5": []
-	},	
+        },	
      },
     "keyboard-state": {
         "numlock": true,
@@ -71,6 +71,14 @@
         "format-icons": ["", ""],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
+    },
+    "custom/cava": {
+        // "exec": "cava -p ~/.config/cava/config_waybar | sed -u 's/;//g;s/0/ /g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;'",
+        "exec": "$HOME/.config/waybar/scripts/cava.sh",
+        "format": "{}",
+        "tooltip": false,
+        "layer": "below",
+        "output": "all"
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",

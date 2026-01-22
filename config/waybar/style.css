@@ -306,3 +306,10 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
+#custom-cava {
+    font-family: "JetBrainsMono Nerd Font", "DejaVu Sans Mono", monospace;
+    min-width: 130px;
+    padding-left: 2px;
+    padding-right: 2px;
+    color: #89b4fa;
+}
